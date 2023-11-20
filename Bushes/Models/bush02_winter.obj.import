@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwchxxv4rv0ag"
+path="res://.godot/imported/bush02_winter.obj-fd0c1a59a25ef2d098afc04c7ec10b58.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bush02_winter.obj-fd0c1a59a25ef2d098afc04c7ec10b58.mesh"]
+
+source_file="res://Bushes/Models/bush02_winter.obj"
+dest_files=["res://.godot/imported/bush02_winter.obj-fd0c1a59a25ef2d098afc04c7ec10b58.mesh", "res://.godot/imported/bush02_winter.obj-fd0c1a59a25ef2d098afc04c7ec10b58.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

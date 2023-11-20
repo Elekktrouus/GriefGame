@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bamlb3fcna5ru"]
+
+[ext_resource type="Material" uid="uid://bplwbqc3r2jrm" path="res://pinetree.tres" id="1_4y4h4"]
+[ext_resource type="ArrayMesh" uid="uid://dkqqniro24jm5" path="res://tree08.obj" id="2_tv1oy"]
+
+[node name="Tree09" type="MeshInstance3D"]
+transform = Transform3D(2.61969, 0, -1.46193, 0, 3.54906, 0, 1.46193, 0, 2.61969, 9.83292, -1.44754, -10.0181)
+material_override = ExtResource("1_4y4h4")
+mesh = ExtResource("2_tv1oy")

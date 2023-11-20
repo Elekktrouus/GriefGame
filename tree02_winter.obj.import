@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bi265xsyhv6av"
+path="res://.godot/imported/tree02_winter.obj-67b27ddb4687fa58895165e1a9324987.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree02_winter.obj-67b27ddb4687fa58895165e1a9324987.mesh"]
+
+source_file="res://tree02_winter.obj"
+dest_files=["res://.godot/imported/tree02_winter.obj-67b27ddb4687fa58895165e1a9324987.mesh", "res://.godot/imported/tree02_winter.obj-67b27ddb4687fa58895165e1a9324987.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

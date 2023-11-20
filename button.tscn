@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bodqbca8guwwt"]
+
+[ext_resource type="Script" path="res://Interactable.gd" id="1_beog1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a8puo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c54pk"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_beog1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_a8puo")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_c54pk")

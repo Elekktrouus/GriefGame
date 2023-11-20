@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bttwhj4c373ev"]
+
+[ext_resource type="Script" path="res://interactRay.gd" id="1_twxgn"]
+
+[node name="Camera" type="Camera3D"]
+transform = Transform3D(0.999957, 2.99753e-05, -0.00928451, 0, 0.999995, 0.00322851, 0.00928456, -0.00322837, 0.999952, -0.0689926, 0.0295525, -0.276869)
+current = true
+fov = 85.0
+
+[node name="InteractRay" type="RayCast3D" parent="."]
+transform = Transform3D(0.999929, 0.0113888, -0.00337488, -0.00352546, 0.0132276, -0.999906, -0.0113431, 0.999848, 0.0132668, 0.0715628, -0.030447, 0.276119)
+target_position = Vector3(0, -4, 0)
+script = ExtResource("1_twxgn")
+
+[node name="Prompt" type="Label" parent="InteractRay"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -104.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Touch
+[KEY]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
