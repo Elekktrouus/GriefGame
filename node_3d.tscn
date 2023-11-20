@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dru60kpstsqwb"]
+[gd_scene load_steps=61 format=3 uid="uid://dru60kpstsqwb"]
 
 [ext_resource type="Script" path="res://dynamicRenderChanges.gd" id="1_nf8ku"]
 [ext_resource type="PackedScene" uid="uid://ctmtx13s0gwo2" path="res://player2.tscn" id="2_dp6eh"]
@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://dpt3sx88hlgi1" path="res://Nature/BGM/calm-river-ambience-loop-125071.mp3" id="36_cy103"]
 [ext_resource type="AudioStream" uid="uid://bo7x1tc8iriv" path="res://Nature/Rocks/plors-75447.mp3" id="37_6yovv"]
 [ext_resource type="PackedScene" uid="uid://cfuluhmbt8rts" path="res://pausemenu.tscn" id="38_xf6bh"]
+[ext_resource type="PackedScene" path="res://Models/Wooden/woodenboat.glb" id="39_vtkje"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lktsm"]
 size = Vector3(48.2826, 1, 72.301)
@@ -145,7 +146,7 @@ spawned_spatial = ExtResource("8_eceh2")
 cast_shadow = 1
 metadata/class = "Greenhouse_LODVariant"
 
-[sub_resource type="Resource" id="Resource_fp4hu"]
+[sub_resource type="Resource" id="Resource_7iyip"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeNode"
 script = ExtResource("29_8r2mr")
@@ -166,22 +167,22 @@ active_LOD_index = 0
 MMI_name = "MultiMeshInstance3D"
 metadata/class = "MMIOctreeNode"
 
-[sub_resource type="Resource" id="Resource_vqvhs"]
+[sub_resource type="Resource" id="Resource_lfgci"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeManager"
 script = ExtResource("30_sc6n5")
-root_octree_node = SubResource("Resource_fp4hu")
+root_octree_node = SubResource("Resource_7iyip")
 LOD_variants = Array[ExtResource("28_4x3sx")]([SubResource("Resource_lt7d0")])
 LOD_max_distance = 10.0
 LOD_kill_distance = -1.0
 metadata/class = "MMIOctreeManager"
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2es3v"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1pt6d"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_3byxp"]
 resource_local_to_scene = true
 transform_format = 1
-mesh = SubResource("ArrayMesh_2es3v")
+mesh = SubResource("ArrayMesh_1pt6d")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wtc4e"]
 size = Vector3(1, 2.43342, 1.39038)
@@ -295,7 +296,7 @@ mesh = ExtResource("9_70i4d")
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -9.23382, -2.89626, -3.78998)
 material_override = SubResource("ShaderMaterial_4hlxq")
-transparency = 0.11
+transparency = 0.09
 mesh = ExtResource("15_enh5r")
 
 [node name="Bush03" type="MeshInstance3D" parent="."]
@@ -338,7 +339,7 @@ metadata/class = "Gardener"
 
 [node name="Arborist" type="Node3D" parent="Gardener"]
 script = ExtResource("26_fh34c")
-octree_managers = [SubResource("Resource_vqvhs")]
+octree_managers = [SubResource("Resource_lfgci")]
 metadata/class = "Arborist"
 
 [node name="MMI_container" type="Node3D" parent="Gardener/Arborist"]
@@ -391,3 +392,6 @@ offset_top = 151.0
 offset_right = 20.0
 offset_bottom = 151.0
 scale = Vector2(0.877165, 0.950049)
+
+[node name="woodenboat" parent="." instance=ExtResource("39_vtkje")]
+transform = Transform3D(0.788741, 0, 0.614726, 0, 1, 0, -0.614726, 0, 0.788741, 27.9535, -2.96018, -10.3679)
