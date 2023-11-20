@@ -18,7 +18,7 @@ func change_scene(scene_path):
 	
 func interact(body):
 	emit_signal("interacted", body)
-	change_scene("res://happy1.tscn")
+	change_scene("res://node_3d.tscn")
 	
 
 	
