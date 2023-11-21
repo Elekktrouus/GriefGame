@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dru60kpstsqwb"]
+[gd_scene load_steps=67 format=3 uid="uid://dru60kpstsqwb"]
 
 [ext_resource type="Script" path="res://dynamicRenderChanges.gd" id="1_nf8ku"]
 [ext_resource type="PackedScene" uid="uid://ctmtx13s0gwo2" path="res://player2.tscn" id="2_dp6eh"]
@@ -43,6 +43,16 @@
 [ext_resource type="PackedScene" uid="uid://o5yco7j45cmj" path="res://bigbadwhiteman.tscn" id="41_0eufa"]
 [ext_resource type="PackedScene" uid="uid://7pd3env17ydo" path="res://Nature/Rocks/low_poly_beer_bottle_-_psx_style.glb" id="42_64rm8"]
 [ext_resource type="PackedScene" uid="uid://bwnjenc6r1ubr" path="res://Nature/Rocks/beerbottle.glb" id="43_4q772"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q77wm"]
+emission_shape = 3
+emission_box_extents = Vector3(10, 10, 10)
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_0vmh2"]
+shape = 0
+size = 0.01
+sections = 4
+section_length = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lktsm"]
 size = Vector3(48.2826, 1, 72.301)
@@ -152,7 +162,7 @@ spawned_spatial = ExtResource("8_eceh2")
 cast_shadow = 1
 metadata/class = "Greenhouse_LODVariant"
 
-[sub_resource type="Resource" id="Resource_y38h2"]
+[sub_resource type="Resource" id="Resource_u4ti2"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeNode"
 script = ExtResource("29_8r2mr")
@@ -173,22 +183,22 @@ active_LOD_index = 0
 MMI_name = "MultiMeshInstance3D"
 metadata/class = "MMIOctreeNode"
 
-[sub_resource type="Resource" id="Resource_xha3p"]
+[sub_resource type="Resource" id="Resource_q74o3"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeManager"
 script = ExtResource("30_sc6n5")
-root_octree_node = SubResource("Resource_y38h2")
+root_octree_node = SubResource("Resource_u4ti2")
 LOD_variants = Array[ExtResource("28_4x3sx")]([SubResource("Resource_lt7d0")])
 LOD_max_distance = 10.0
 LOD_kill_distance = -1.0
 metadata/class = "MMIOctreeManager"
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_h702l"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_s5kf2"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_3byxp"]
 resource_local_to_scene = true
 transform_format = 1
-mesh = SubResource("ArrayMesh_h702l")
+mesh = SubResource("ArrayMesh_s5kf2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wtc4e"]
 size = Vector3(1, 2.43342, 1.39038)
@@ -199,6 +209,12 @@ script = ExtResource("1_nf8ku")
 
 [node name="player" parent="." instance=ExtResource("2_dp6eh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4321, 5.16703, 3.04962)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="player"]
+amount = 16
+lifetime = 0.02
+process_material = SubResource("ParticleProcessMaterial_q77wm")
+draw_pass_1 = SubResource("RibbonTrailMesh_0vmh2")
 
 [node name="respawn collision" type="Area3D" parent="."]
 transform = Transform3D(-0.999957, -2.9975e-05, 0.00928442, 0, 0.999995, 0.00322851, -0.00928447, 0.00322837, -0.999952, 0.0372552, 3.18482, 3.69186)
@@ -345,7 +361,7 @@ metadata/class = "Gardener"
 
 [node name="Arborist" type="Node3D" parent="Gardener"]
 script = ExtResource("26_fh34c")
-octree_managers = [SubResource("Resource_xha3p")]
+octree_managers = [SubResource("Resource_q74o3")]
 metadata/class = "Arborist"
 
 [node name="MMI_container" type="Node3D" parent="Gardener/Arborist"]

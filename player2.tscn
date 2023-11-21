@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctmtx13s0gwo2"]
+[gd_scene load_steps=5 format=3 uid="uid://ctmtx13s0gwo2"]
 
 [ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_8xv3w"]
 [ext_resource type="PackedScene" uid="uid://bttwhj4c373ev" path="res://camera.tscn" id="2_crqd8"]
@@ -6,10 +6,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mshxy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dnfx4"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq7wf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x1sjq"]
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_8xv3w")
@@ -21,7 +17,3 @@ shape = SubResource("CapsuleShape3D_mshxy")
 mesh = SubResource("CapsuleMesh_dnfx4")
 
 [node name="Camera" parent="." instance=ExtResource("2_crqd8")]
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-material_override = SubResource("StandardMaterial3D_nq7wf")
-process_material = SubResource("ShaderMaterial_x1sjq")
