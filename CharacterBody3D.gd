@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 4.5
 @export var sensivity = 0.3
 var fov = false
 var lerp_speed= 1
-
+@onready var main  = $"../"
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -18,7 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and (main.paused==false):
 		get_node("Camera").rotation_degrees.x -= event.relative.y * sensivity
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90)
 		rotation_degrees.y -= event.relative.x * sensivity

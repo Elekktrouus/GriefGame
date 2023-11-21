@@ -38,7 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://dpt3sx88hlgi1" path="res://Nature/BGM/calm-river-ambience-loop-125071.mp3" id="36_cy103"]
 [ext_resource type="AudioStream" uid="uid://bo7x1tc8iriv" path="res://Nature/Rocks/plors-75447.mp3" id="37_6yovv"]
 [ext_resource type="PackedScene" uid="uid://cfuluhmbt8rts" path="res://pausemenu.tscn" id="38_xf6bh"]
-[ext_resource type="PackedScene" path="res://Models/Wooden/woodenboat.glb" id="39_vtkje"]
+[ext_resource type="PackedScene" uid="uid://d3yk0rn3jv7kb" path="res://Models/Wooden/woodenboat.glb" id="39_vtkje"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lktsm"]
 size = Vector3(48.2826, 1, 72.301)
@@ -146,7 +146,7 @@ spawned_spatial = ExtResource("8_eceh2")
 cast_shadow = 1
 metadata/class = "Greenhouse_LODVariant"
 
-[sub_resource type="Resource" id="Resource_7iyip"]
+[sub_resource type="Resource" id="Resource_uijcs"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeNode"
 script = ExtResource("29_8r2mr")
@@ -167,22 +167,22 @@ active_LOD_index = 0
 MMI_name = "MultiMeshInstance3D"
 metadata/class = "MMIOctreeNode"
 
-[sub_resource type="Resource" id="Resource_lfgci"]
+[sub_resource type="Resource" id="Resource_vmt4r"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeManager"
 script = ExtResource("30_sc6n5")
-root_octree_node = SubResource("Resource_7iyip")
+root_octree_node = SubResource("Resource_uijcs")
 LOD_variants = Array[ExtResource("28_4x3sx")]([SubResource("Resource_lt7d0")])
 LOD_max_distance = 10.0
 LOD_kill_distance = -1.0
 metadata/class = "MMIOctreeManager"
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1pt6d"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6n7uh"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_3byxp"]
 resource_local_to_scene = true
 transform_format = 1
-mesh = SubResource("ArrayMesh_1pt6d")
+mesh = SubResource("ArrayMesh_6n7uh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wtc4e"]
 size = Vector3(1, 2.43342, 1.39038)
@@ -339,7 +339,7 @@ metadata/class = "Gardener"
 
 [node name="Arborist" type="Node3D" parent="Gardener"]
 script = ExtResource("26_fh34c")
-octree_managers = [SubResource("Resource_lfgci")]
+octree_managers = [SubResource("Resource_vmt4r")]
 metadata/class = "Arborist"
 
 [node name="MMI_container" type="Node3D" parent="Gardener/Arborist"]
