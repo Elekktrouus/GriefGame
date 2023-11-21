@@ -152,7 +152,7 @@ spawned_spatial = ExtResource("8_eceh2")
 cast_shadow = 1
 metadata/class = "Greenhouse_LODVariant"
 
-[sub_resource type="Resource" id="Resource_0vxqi"]
+[sub_resource type="Resource" id="Resource_y38h2"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeNode"
 script = ExtResource("29_8r2mr")
@@ -173,22 +173,22 @@ active_LOD_index = 0
 MMI_name = "MultiMeshInstance3D"
 metadata/class = "MMIOctreeNode"
 
-[sub_resource type="Resource" id="Resource_n88no"]
+[sub_resource type="Resource" id="Resource_xha3p"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeManager"
 script = ExtResource("30_sc6n5")
-root_octree_node = SubResource("Resource_0vxqi")
+root_octree_node = SubResource("Resource_y38h2")
 LOD_variants = Array[ExtResource("28_4x3sx")]([SubResource("Resource_lt7d0")])
 LOD_max_distance = 10.0
 LOD_kill_distance = -1.0
 metadata/class = "MMIOctreeManager"
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4jqhc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_h702l"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_3byxp"]
 resource_local_to_scene = true
 transform_format = 1
-mesh = SubResource("ArrayMesh_4jqhc")
+mesh = SubResource("ArrayMesh_h702l")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wtc4e"]
 size = Vector3(1, 2.43342, 1.39038)
@@ -345,7 +345,7 @@ metadata/class = "Gardener"
 
 [node name="Arborist" type="Node3D" parent="Gardener"]
 script = ExtResource("26_fh34c")
-octree_managers = [SubResource("Resource_n88no")]
+octree_managers = [SubResource("Resource_xha3p")]
 metadata/class = "Arborist"
 
 [node name="MMI_container" type="Node3D" parent="Gardener/Arborist"]
