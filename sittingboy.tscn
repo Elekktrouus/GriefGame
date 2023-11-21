@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://es64tnmljtsh"]
+
+[ext_resource type="PackedScene" uid="uid://b8u0yhmwpshxh" path="res://Nature/Rocks/sittingboy.glb" id="1_luele"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2luvd"]
+shading_mode = 0
+
+[node name="sittingboy" instance=ExtResource("1_luele")]
+
+[node name="HumanoidBase_NotOverlapping" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_2luvd")

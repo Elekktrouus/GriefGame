@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dru60kpstsqwb"]
+[gd_scene load_steps=65 format=3 uid="uid://dru60kpstsqwb"]
 
 [ext_resource type="Script" path="res://dynamicRenderChanges.gd" id="1_nf8ku"]
 [ext_resource type="PackedScene" uid="uid://ctmtx13s0gwo2" path="res://player2.tscn" id="2_dp6eh"]
@@ -39,6 +39,10 @@
 [ext_resource type="AudioStream" uid="uid://bo7x1tc8iriv" path="res://Nature/Rocks/plors-75447.mp3" id="37_6yovv"]
 [ext_resource type="PackedScene" uid="uid://cfuluhmbt8rts" path="res://pausemenu.tscn" id="38_xf6bh"]
 [ext_resource type="PackedScene" uid="uid://d3yk0rn3jv7kb" path="res://Models/Wooden/woodenboat.glb" id="39_vtkje"]
+[ext_resource type="PackedScene" uid="uid://es64tnmljtsh" path="res://sittingboy.tscn" id="40_hht14"]
+[ext_resource type="PackedScene" uid="uid://o5yco7j45cmj" path="res://bigbadwhiteman.tscn" id="41_0eufa"]
+[ext_resource type="PackedScene" uid="uid://7pd3env17ydo" path="res://Nature/Rocks/low_poly_beer_bottle_-_psx_style.glb" id="42_64rm8"]
+[ext_resource type="PackedScene" uid="uid://bwnjenc6r1ubr" path="res://Nature/Rocks/beerbottle.glb" id="43_4q772"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lktsm"]
 size = Vector3(48.2826, 1, 72.301)
@@ -66,7 +70,8 @@ background_color = Color(0.807843, 0.807843, 0.807843, 1)
 background_energy_multiplier = 2.35
 sky = SubResource("Sky_w8l2l")
 volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0, 0, 0, 1)
+volumetric_fog_density = 0.0896
+volumetric_fog_albedo = Color(0.262745, 0.262745, 0.262745, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqba7"]
 transparency = 2
@@ -81,6 +86,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("8_7u3qt")
+metallic_specular = 0.0
 texture_filter = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4hlxq"]
@@ -146,7 +152,7 @@ spawned_spatial = ExtResource("8_eceh2")
 cast_shadow = 1
 metadata/class = "Greenhouse_LODVariant"
 
-[sub_resource type="Resource" id="Resource_uijcs"]
+[sub_resource type="Resource" id="Resource_0vxqi"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeNode"
 script = ExtResource("29_8r2mr")
@@ -167,22 +173,22 @@ active_LOD_index = 0
 MMI_name = "MultiMeshInstance3D"
 metadata/class = "MMIOctreeNode"
 
-[sub_resource type="Resource" id="Resource_vmt4r"]
+[sub_resource type="Resource" id="Resource_n88no"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeManager"
 script = ExtResource("30_sc6n5")
-root_octree_node = SubResource("Resource_uijcs")
+root_octree_node = SubResource("Resource_0vxqi")
 LOD_variants = Array[ExtResource("28_4x3sx")]([SubResource("Resource_lt7d0")])
 LOD_max_distance = 10.0
 LOD_kill_distance = -1.0
 metadata/class = "MMIOctreeManager"
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6n7uh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4jqhc"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_3byxp"]
 resource_local_to_scene = true
 transform_format = 1
-mesh = SubResource("ArrayMesh_6n7uh")
+mesh = SubResource("ArrayMesh_4jqhc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wtc4e"]
 size = Vector3(1, 2.43342, 1.39038)
@@ -339,7 +345,7 @@ metadata/class = "Gardener"
 
 [node name="Arborist" type="Node3D" parent="Gardener"]
 script = ExtResource("26_fh34c")
-octree_managers = [SubResource("Resource_vmt4r")]
+octree_managers = [SubResource("Resource_n88no")]
 metadata/class = "Arborist"
 
 [node name="MMI_container" type="Node3D" parent="Gardener/Arborist"]
@@ -395,3 +401,24 @@ scale = Vector2(0.877165, 0.950049)
 
 [node name="woodenboat" parent="." instance=ExtResource("39_vtkje")]
 transform = Transform3D(0.788741, 0, 0.614726, 0, 1, 0, -0.614726, 0, 0.788741, 27.9535, -2.96018, -10.3679)
+
+[node name="sittingboy" parent="." instance=ExtResource("40_hht14")]
+transform = Transform3D(0.0477327, 0, 0.0878726, 0, 0.1, 0, -0.0878726, 0, 0.0477327, 9.73801, -1.87776, -9.1601)
+
+[node name="sittingboy2" parent="." instance=ExtResource("40_hht14")]
+transform = Transform3D(0.0477327, 0, 0.0949024, 0, 0.106, 0, -0.0878726, 0, 0.0515514, 26.5785, -2.61439, -13.4253)
+
+[node name="bigbadwhiteman" parent="." instance=ExtResource("41_0eufa")]
+transform = Transform3D(-1.32339, 0, -2.121, 0, 2.5, 0, 2.121, 0, -1.32339, 29.0715, -3.06364, -11.0613)
+
+[node name="bigbadwhiteman2" parent="." instance=ExtResource("41_0eufa")]
+transform = Transform3D(1.56219, 0, -1.95181, 0, 2.5, 0, 1.95181, 0, 1.56219, 28.4481, -3.1672, -12.0918)
+
+[node name="low_poly_beer_bottle_-_psx_style" parent="." instance=ExtResource("42_64rm8")]
+transform = Transform3D(-0.0119235, 0.0103034, 0.0474518, 0.00251093, 0.0489269, -0.00999274, -0.0484925, 9.31323e-10, -0.012185, 14.0718, -2.75718, -16.5246)
+
+[node name="beerbottle" parent="." instance=ExtResource("43_4q772")]
+transform = Transform3D(0.996869, -0.0790682, 0, 0.0790682, 0.996869, 0, 0, 0, 1, 14.6968, -2.07534, -16.7436)
+
+[node name="beerbottle2" parent="." instance=ExtResource("43_4q772")]
+transform = Transform3D(0.49558, 0.190106, 0.847502, -0.842868, 0.34084, 0.416415, -0.2097, -0.920699, 0.329148, 14.6968, -2.61538, -17.4879)
